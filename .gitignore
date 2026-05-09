@@ -1,0 +1,8 @@
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/
+
+# Workshop planning notes are not part of the starter template.
+github_pages_workshop_plan.md
