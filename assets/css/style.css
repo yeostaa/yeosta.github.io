@@ -77,6 +77,66 @@ article > p:first-of-type img {
   object-position: center;
 }
 
+.post-hero,
+.image-cursor-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.post-hero img,
+.image-cursor-frame img {
+  display: block;
+  cursor: crosshair;
+  transition:
+    filter 420ms ease,
+    transform 420ms ease;
+}
+
+.image-cursor-frame img:active {
+  transform: scale(1.01);
+}
+
+.color-mode-rose {
+  filter: saturate(1.3) contrast(1.04) hue-rotate(-12deg);
+}
+
+.color-mode-warm {
+  filter: sepia(0.18) saturate(1.45) hue-rotate(8deg) brightness(1.03);
+}
+
+.color-mode-cool {
+  filter: saturate(1.12) hue-rotate(155deg) brightness(1.04);
+}
+
+.color-mode-soft {
+  filter: saturate(0.72) contrast(0.92) brightness(1.12);
+}
+
+.color-mode-ink {
+  filter: grayscale(0.85) contrast(1.18) brightness(1.02);
+}
+
+.image-cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.7),
+    0 0 1.4rem rgba(255, 255, 255, 0.82);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.image-cursor-frame.is-cursor-active .image-cursor-dot {
+  opacity: 1;
+}
+
 p,
 li,
 blockquote {
